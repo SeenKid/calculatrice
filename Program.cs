@@ -122,37 +122,6 @@ namespace Calculatrice
                         break;
                 }
             } while (true);
-            } 
-
-        //private void LoopMethod()
-        //{
-        //    List<int> maListe = new List<int>();
-
-        //    for (int i = 0; i < maListe.Count; i++)
-        //    {
-        //        var item = maListe[i];
-        //    }
-
-        //    foreach (var item in maListe)
-        //    {
-
-        //    }
-
-        //    int j = 0;
-        //    while (j < maListe.Count)
-        //    {
-        //        var item = maListe[j];
-
-        //        //Code
-
-
-        //        j++;
-        //    }
-
-        //    do
-        //    {
-
-        //    } while (true);
-        //}
+        } 
     }
 }
