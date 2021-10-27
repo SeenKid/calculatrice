@@ -13,9 +13,9 @@ namespace Calculatrice
                 Console.Write("/ : Division\n");
                 Console.Write("- : Soustraction\n");
                 Console.Write("+ : Addition\n");
+                Console.Write("Q : Quitter l'application\n");
                 Console.Write("C : Clear la console\n\nVotre choix : ");
-                //Console.ReadLine();
-
+                
                 string calc = Console.ReadLine();
                 switch (calc)
                 {
@@ -39,7 +39,6 @@ namespace Calculatrice
                             int final = result + result1;
                             Console.WriteLine("======================");
                             Console.WriteLine("votre résultat est : " + final);
-                            //Console.WriteLine("votre résultat est : " + final);
                             Console.WriteLine("======================");
                             Console.WriteLine();
                             break;
@@ -64,7 +63,6 @@ namespace Calculatrice
                         Console.WriteLine();
                         Console.WriteLine("======================");
                         Console.WriteLine("votre résultat est : " + final1);
-                        //Console.WriteLine("votre résultat est : " + final1);
                         Console.WriteLine("======================");
                         Console.WriteLine();
                         break;
@@ -87,7 +85,6 @@ namespace Calculatrice
                         int final2 = result4 - result5;
                         Console.WriteLine("======================");
                         Console.WriteLine("votre résultat est : " + final2);
-                        //Console.WriteLine("votre résultat est : " + final2);
                         Console.WriteLine("======================");
                         Console.WriteLine();
                         break;
@@ -110,13 +107,14 @@ namespace Calculatrice
                         int final3 = result6 / result7;
                         Console.WriteLine("======================");
                         Console.WriteLine("votre résultat est : " + final3);
-                        //Console.WriteLine("votre résultat est : " + final3);
                         Console.WriteLine("======================");
                         Console.WriteLine();
                         break;
                     case "C":
                         Console.Clear();
                         break;
+                    case "Q":
+                        return;
                     default:
                         Console.WriteLine("Vous n'avez choisi aucun calcul. La calculatrice c'est arrêtée.");
                         break;
