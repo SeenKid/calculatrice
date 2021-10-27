@@ -1,136 +1,158 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 
 namespace Calculatrice
 {
     class Program
     {
-        /*
-         * Calculatrice :
-         * 
-         * Operations : + - * /
-         * Flux simple : 
-         * 1) Saisie de la partie gauche de l'expression --> 1
-         * 2) Saisie de l'opérateur arithmétiques --> +
-         * 3) Saisie de la partie droite de l'expression --> 3
-         * 4) Affichage du resultat
-         * 
-         * Exigences : 
-         * - La console s'éxecute tant que l'utilisateur ne saisie pas la lettre 'Q', 'Quitter' ou la combinaison de touches 'CTRL+Q'.
-         * - Le dernier résultat est réutilisable et permet de sauter l'étape 1 du flux.
-         * - Prévenir les erreurs de saisies.
-         * - Commentaires, best practices, naming conventions, etc...
-         * 
-         * Thèmes :
-         * - Boucles: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/statements/iteration-statements
-         * - Tests et boolean: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators
-         * - Opérateur arithmétiques: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators
-         * - Value types: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types
-         * - Cast/Conversion de types: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/type-testing-and-cast#cast-expression & https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/casting-and-type-conversions
-         * 
-         */
         static void Main(string[] args)
         {
-            Console.Write("* : Multiplication\n");
-            Console.Write("/ : Division\n");
-            Console.Write("- : Soustraction\n");
-            Console.Write("+ : Addition\n");
-            //Console.ReadLine();
-
-            string calc = Console.ReadLine();
-            switch (calc)
+            do
             {
-                case "+":
-                    /* Addition */
-                    Console.WriteLine("Entrez le nombre 1 : ");
-                    var num1 = Console.ReadLine();
-                    if (!int.TryParse(num1, out int resulta1))
-                    {
-                        Console.WriteLine("Valeur invalide.");
+                Console.Write("* : Multiplication\n");
+                Console.Write("/ : Division\n");
+                Console.Write("- : Soustraction\n");
+                Console.Write("+ : Addition\n");
+                Console.Write("C : Clear la console\n\nVotre choix : ");
+                //Console.ReadLine();
+
+                string calc = Console.ReadLine();
+                switch (calc)
+                {
+                    case "+":
+                        {
+                            /* Addition */
+                            Console.WriteLine("Entrez le nombre 1 : ");
+                            var readlineOutput = Console.ReadLine();
+                            if (!int.TryParse(readlineOutput, out int result))
+                            {
+                                Console.WriteLine("Valeur invalide.");
+                                break;
+                            }
+                            Console.WriteLine("Entrez le nombre 2 : ");
+                            var readlineOutput1 = Console.ReadLine();
+                            if (!int.TryParse(readlineOutput1, out int result1))
+                            {
+                                Console.WriteLine("Valeur invalide.");
+                                break;
+                            }
+                            int final = result + result1;
+                            Console.WriteLine("======================");
+                            Console.WriteLine("votre résultat est : " + final);
+                            //Console.WriteLine("votre résultat est : " + final);
+                            Console.WriteLine("======================");
+                            Console.WriteLine();
+                            break;
+                        }
+                    case "*":
+                        /* Multiplication */
+                        Console.WriteLine("Entrez le nombre 1 : ");
+                        var readlineOutput2 = Console.ReadLine();
+                        if (!int.TryParse(readlineOutput2, out int result2))
+                        {
+                            Console.WriteLine("Valeur invalide.");
+                            break;
+                        }
+                        Console.WriteLine("Entrez le nombre 2 : ");
+                        var readlineOutput3 = Console.ReadLine();
+                        if (!int.TryParse(readlineOutput3, out int result3))
+                        {
+                            Console.WriteLine("Valeur invalide.");
+                            break;
+                        }
+                        int final1 = result3 * result3;
+                        Console.WriteLine();
+                        Console.WriteLine("======================");
+                        Console.WriteLine("votre résultat est : " + final1);
+                        //Console.WriteLine("votre résultat est : " + final1);
+                        Console.WriteLine("======================");
+                        Console.WriteLine();
                         break;
-                    }
-                    Console.WriteLine("Entrez le nombre 2 : ");
-                    var num2 = Console.ReadLine();
-                    if (!int.TryParse(num2, out int result2))
-                    {
-                        Console.WriteLine("Valeur invalide.");
+                    case "-":
+                        /* Soustraction */
+                        Console.WriteLine("Entrez le nombre 1 : ");
+                        var readlineOutput4 = Console.ReadLine();
+                        if (!int.TryParse(readlineOutput4, out int result4))
+                        {
+                            Console.WriteLine("Valeur invalide.");
+                            break;
+                        }
+                        Console.WriteLine("Entrez le nombre 2 : ");
+                        var readlineOutput5 = Console.ReadLine();
+                        if (!int.TryParse(readlineOutput5, out int result5))
+                        {
+                            Console.WriteLine("Valeur invalide.");
+                            break;
+                        }
+                        int final2 = result4 - result5;
+                        Console.WriteLine("======================");
+                        Console.WriteLine("votre résultat est : " + final2);
+                        //Console.WriteLine("votre résultat est : " + final2);
+                        Console.WriteLine("======================");
+                        Console.WriteLine();
                         break;
-                    }
-                    int finala = result2 + resulta1;
-                    Console.WriteLine("======================");
-                    Console.WriteLine("votre résultat est : " + finala);
-                    break;
-                case "*":
-                    /* Multiplication */
-                    Console.WriteLine("Entrez le nombre 1 : ");
-                    var maValeur = Console.ReadLine();
-                    if (!int.TryParse(maValeur, out int result))
-                    {
-                        Console.WriteLine("Valeur invalide.");
+                    case "/":
+                        /* Division */
+                        Console.WriteLine("Entrez le nombre 1 : ");
+                        var readlineOutput6 = Console.ReadLine();
+                        if (!int.TryParse(readlineOutput6, out int result6))
+                        {
+                            Console.WriteLine("Valeur invalide.");
+                            break;
+                        }
+                        Console.WriteLine("Entrez le nombre 2 : ");
+                        var readlineOutput7 = Console.ReadLine();
+                        if (!int.TryParse(readlineOutput7, out int result7))
+                        {
+                            Console.WriteLine("Valeur invalide.");
+                            break;
+                        }
+                        int final3 = result6 / result7;
+                        Console.WriteLine("======================");
+                        Console.WriteLine("votre résultat est : " + final3);
+                        //Console.WriteLine("votre résultat est : " + final3);
+                        Console.WriteLine("======================");
+                        Console.WriteLine();
                         break;
-                    }
-                    var num3 = Console.ReadLine();
-                    if (!int.TryParse(num3, out int result3))
-                    {
-                        Console.WriteLine("Valeur invalide.");
+                    case "C":
+                        Console.Clear();
                         break;
-                    }
-                    Console.WriteLine("Entrez le nombre 2 : ");
-                    var num4 = Console.ReadLine();
-                    if (!int.TryParse(num4, out int resulta))
-                    {
-                        Console.WriteLine("Valeur invalide.");
+                    default:
+                        Console.WriteLine("Vous n'avez choisi aucun calcul. La calculatrice c'est arrêtée.");
                         break;
-                    }
-                    int finalm = result3 * resulta;
-                    Console.WriteLine();
-                    Console.WriteLine("======================");
-                    Console.WriteLine("votre résultat est : " + finalm);
-                    break;
-                case "-":
-                    /* Soustraction */
-                    Console.WriteLine("Entrez le nombre 1 : ");
-                    var num5 = Console.ReadLine();
-                    if (!int.TryParse(num5, out int result5))
-                    {
-                        Console.WriteLine("Valeur invalide.");
-                        break;
-                    }
-                    Console.WriteLine("Entrez le nombre 2 : ");
-                    var num6 = Console.ReadLine();
-                    if (!int.TryParse(num6, out int result6))
-                    {
-                        Console.WriteLine("Valeur invalide.");
-                        break;
-                    }
-                    int finals = result5 - result6;
-                    Console.WriteLine("======================");
-                    Console.WriteLine("votre résultat est : " + finals);
-                    break;
-                case "/":
-                    /* Division */
-                    Console.WriteLine("Entrez le nombre 1 : ");
-                    var num7 = Console.ReadLine();
-                    if (!int.TryParse(num7, out int result7))
-                    {
-                        Console.WriteLine("Valeur invalide.");
-                        break;
-                    }
-                    Console.WriteLine("Entrez le nombre 2 : ");
-                    var num8 = Console.ReadLine();
-                    if (!int.TryParse(num8, out int result8))
-                    {
-                        Console.WriteLine("Valeur invalide.");
-                        break;
-                    }
-                    int finald = result7 / result8;
-                    Console.WriteLine("======================");
-                    Console.WriteLine("votre résultat est : " + finald);
-                    break;
-                default:
-                    Console.WriteLine("Vous n'avez choisi aucun calcul. La calculatrice c'est arrêtée.");
-                    break;
-            }
-            Console.ReadKey();
-        }
+                }
+            } while (true);
+            } 
+
+        //private void LoopMethod()
+        //{
+        //    List<int> maListe = new List<int>();
+
+        //    for (int i = 0; i < maListe.Count; i++)
+        //    {
+        //        var item = maListe[i];
+        //    }
+
+        //    foreach (var item in maListe)
+        //    {
+
+        //    }
+
+        //    int j = 0;
+        //    while (j < maListe.Count)
+        //    {
+        //        var item = maListe[j];
+
+        //        //Code
+
+
+        //        j++;
+        //    }
+
+        //    do
+        //    {
+
+        //    } while (true);
+        //}
     }
 }
