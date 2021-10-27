@@ -4,30 +4,6 @@ namespace Calculatrice
 {
     class Program
     {
-        /*
-         * Calculatrice :
-         * 
-         * Operations : + - * /
-         * Flux simple : 
-         * 1) Saisie de la partie gauche de l'expression --> 1
-         * 2) Saisie de l'opérateur arithmétiques --> +
-         * 3) Saisie de la partie droite de l'expression --> 3
-         * 4) Affichage du resultat
-         * 
-         * Exigences : 
-         * - La console s'éxecute tant que l'utilisateur ne saisie pas la lettre 'Q', 'Quitter' ou la combinaison de touches 'CTRL+Q'.
-         * - Le dernier résultat est réutilisable et permet de sauter l'étape 1 du flux.
-         * - Prévenir les erreurs de saisies.
-         * - Commentaires, best practices, naming conventions, etc...
-         * 
-         * Thèmes :
-         * - Boucles: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/statements/iteration-statements
-         * - Tests et boolean: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators
-         * - Opérateur arithmétiques: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators
-         * - Value types: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types
-         * - Cast/Conversion de types: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/type-testing-and-cast#cast-expression & https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/casting-and-type-conversions
-         * 
-         */
         static void Main(string[] args)
         {
             Console.Write("* : Multiplication\n");
