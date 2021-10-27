@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace Calculatrice
 {
@@ -7,6 +8,8 @@ namespace Calculatrice
     {
         static void Main(string[] args)
         {
+            var numberFortmatSeparatedByComa = new CultureInfo("en-US").NumberFormat;
+            var numberFortmatSeparatedByDot = new CultureInfo("fr-CH").NumberFormat;
             do
             {
                 Console.Write("* : Multiplication\n");
@@ -15,7 +18,7 @@ namespace Calculatrice
                 Console.Write("+ : Addition\n");
                 Console.Write("Q : Quitter l'application\n");
                 Console.Write("C : Clear la console\n\nVotre choix : ");
-                
+
                 string calc = Console.ReadLine();
                 switch (calc)
                 {
@@ -24,19 +27,24 @@ namespace Calculatrice
                             /* Addition */
                             Console.WriteLine("Entrez le nombre 1 : ");
                             var readlineOutput = Console.ReadLine();
-                            if (!int.TryParse(readlineOutput, out int result))
+
+                            decimal? result = StringToDecimal(readlineOutput);
+                            if (result is null)
                             {
                                 Console.WriteLine("Valeur invalide.");
                                 break;
                             }
+
                             Console.WriteLine("Entrez le nombre 2 : ");
                             var readlineOutput1 = Console.ReadLine();
-                            if (!int.TryParse(readlineOutput1, out int result1))
+                            decimal? result1 = StringToDecimal(readlineOutput);
+                            if (result is null)
                             {
                                 Console.WriteLine("Valeur invalide.");
                                 break;
                             }
-                            int final = result + result1;
+
+                            decimal final = result.Value + result1.Value;
                             Console.WriteLine("======================");
                             Console.WriteLine("votre résultat est : " + final);
                             Console.WriteLine("======================");
@@ -47,19 +55,23 @@ namespace Calculatrice
                         /* Multiplication */
                         Console.WriteLine("Entrez le nombre 1 : ");
                         var readlineOutput2 = Console.ReadLine();
-                        if (!int.TryParse(readlineOutput2, out int result2))
+                        decimal? result2 = StringToDecimal(readlineOutput2);
+                        if (result2 is null)
                         {
                             Console.WriteLine("Valeur invalide.");
                             break;
                         }
+
                         Console.WriteLine("Entrez le nombre 2 : ");
                         var readlineOutput3 = Console.ReadLine();
-                        if (!int.TryParse(readlineOutput3, out int result3))
+                        decimal? result3 = StringToDecimal(readlineOutput3);
+                        if (result3 is null)
                         {
                             Console.WriteLine("Valeur invalide.");
                             break;
                         }
-                        int final1 = result3 * result3;
+
+                        decimal final1 = result3.Value * result3.Value;
                         Console.WriteLine();
                         Console.WriteLine("======================");
                         Console.WriteLine("votre résultat est : " + final1);
@@ -70,19 +82,23 @@ namespace Calculatrice
                         /* Soustraction */
                         Console.WriteLine("Entrez le nombre 1 : ");
                         var readlineOutput4 = Console.ReadLine();
-                        if (!int.TryParse(readlineOutput4, out int result4))
+                        decimal? result4 = StringToDecimal(readlineOutput4);
+                        if (result4 is null)
                         {
                             Console.WriteLine("Valeur invalide.");
                             break;
                         }
+
                         Console.WriteLine("Entrez le nombre 2 : ");
                         var readlineOutput5 = Console.ReadLine();
-                        if (!int.TryParse(readlineOutput5, out int result5))
+                        decimal? result5 = StringToDecimal(readlineOutput5);
+                        if (result5 is null)
                         {
                             Console.WriteLine("Valeur invalide.");
                             break;
                         }
-                        int final2 = result4 - result5;
+
+                        decimal final2 = result4.Value - result5.Value;
                         Console.WriteLine("======================");
                         Console.WriteLine("votre résultat est : " + final2);
                         Console.WriteLine("======================");
@@ -92,19 +108,23 @@ namespace Calculatrice
                         /* Division */
                         Console.WriteLine("Entrez le nombre 1 : ");
                         var readlineOutput6 = Console.ReadLine();
-                        if (!int.TryParse(readlineOutput6, out int result6))
+                        decimal? result6 = StringToDecimal(readlineOutput6);
+                        if (result6 is null)
                         {
                             Console.WriteLine("Valeur invalide.");
                             break;
                         }
+
                         Console.WriteLine("Entrez le nombre 2 : ");
                         var readlineOutput7 = Console.ReadLine();
-                        if (!int.TryParse(readlineOutput7, out int result7))
+                        decimal? result7 = StringToDecimal(readlineOutput7);
+                        if (result7 is null)
                         {
                             Console.WriteLine("Valeur invalide.");
                             break;
                         }
-                        int final3 = result6 / result7;
+
+                        decimal final3 = result6.Value / result7.Value;
                         Console.WriteLine("======================");
                         Console.WriteLine("votre résultat est : " + final3);
                         Console.WriteLine("======================");
@@ -120,6 +140,23 @@ namespace Calculatrice
                         break;
                 }
             } while (true);
-        } 
+        }
+
+
+        private static decimal? StringToDecimal(string inputString)
+        {
+            var numberFortmatSeparatedByComa = new CultureInfo("en-US").NumberFormat;
+            var numberFortmatSeparatedByDot = new CultureInfo("fr-CH").NumberFormat;
+
+            if (!decimal.TryParse(inputString, NumberStyles.Any, numberFortmatSeparatedByComa, out decimal result))
+            {
+                if (!decimal.TryParse(inputString, NumberStyles.Any, numberFortmatSeparatedByDot, out result))
+                {
+                    return null;
+                }
+
+            }
+            return result;
+        }
     }
 }
