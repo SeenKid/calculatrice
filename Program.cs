@@ -41,14 +41,14 @@ namespace Calculatrice
             {
                 case "+":
                     /* Addition */
-                    Console.Write("Entrez le nombre 1 : \n");
+                    Console.WriteLine("Entrez le nombre 1 : ");
                     var num1 = Console.ReadLine();
                     if (!int.TryParse(num1, out int resulta1))
                     {
                         Console.WriteLine("Valeur invalide.");
                         break;
                     }
-                    Console.Write("Entrez le nombre 2 : \n");
+                    Console.WriteLine("Entrez le nombre 2 : ");
                     var num2 = Console.ReadLine();
                     if (!int.TryParse(num2, out int result2))
                     {
@@ -57,11 +57,11 @@ namespace Calculatrice
                     }
                     int finala = result2 + resulta1;
                     Console.WriteLine("======================");
-                    Console.Write("votre résultat est : " + finala + "\n");
+                    Console.WriteLine("votre résultat est : " + finala);
                     break;
                 case "*":
                     /* Multiplication */
-                    Console.Write("Entrez le nombre 1 : \n");
+                    Console.WriteLine("Entrez le nombre 1 : ");
                     var maValeur = Console.ReadLine();
                     if (!int.TryParse(maValeur, out int result))
                     {
@@ -74,7 +74,7 @@ namespace Calculatrice
                         Console.WriteLine("Valeur invalide.");
                         break;
                     }
-                    Console.Write("Entrez le nombre 2 : \n");
+                    Console.WriteLine("Entrez le nombre 2 : ");
                     var num4 = Console.ReadLine();
                     if (!int.TryParse(num4, out int resulta))
                     {
@@ -88,14 +88,14 @@ namespace Calculatrice
                     break;
                 case "-":
                     /* Soustraction */
-                    Console.Write("Entrez le nombre 1 : \n");
+                    Console.WriteLine("Entrez le nombre 1 : ");
                     var num5 = Console.ReadLine();
                     if (!int.TryParse(num5, out int result5))
                     {
                         Console.WriteLine("Valeur invalide.");
                         break;
                     }
-                    Console.Write("Entrez le nombre 2 : \n");
+                    Console.WriteLine("Entrez le nombre 2 : ");
                     var num6 = Console.ReadLine();
                     if (!int.TryParse(num6, out int result6))
                     {
@@ -104,18 +104,18 @@ namespace Calculatrice
                     }
                     int finals = result5 - result6;
                     Console.WriteLine("======================");
-                    Console.Write("votre résultat est : " + finals + "\n");
+                    Console.WriteLine("votre résultat est : " + finals);
                     break;
                 case "/":
                     /* Division */
-                    Console.Write("Entrez le nombre 1 : \n");
+                    Console.WriteLine("Entrez le nombre 1 : ");
                     var num7 = Console.ReadLine();
                     if (!int.TryParse(num7, out int result7))
                     {
                         Console.WriteLine("Valeur invalide.");
                         break;
                     }
-                    Console.Write("Entrez le nombre 2 : \n");
+                    Console.WriteLine("Entrez le nombre 2 : ");
                     var num8 = Console.ReadLine();
                     if (!int.TryParse(num8, out int result8))
                     {
@@ -124,10 +124,10 @@ namespace Calculatrice
                     }
                     int finald = result7 / result8;
                     Console.WriteLine("======================");
-                    Console.Write("votre résultat est : " + finald + "\n");
+                    Console.WriteLine("votre résultat est : " + finald);
                     break;
                 default:
-                    Console.Write("Vous n'avez choisi aucun calcul. La calculatrice c'est arrêtée.");
+                    Console.WriteLine("Vous n'avez choisi aucun calcul. La calculatrice c'est arrêtée.");
                     break;
             }
             Console.ReadKey();
