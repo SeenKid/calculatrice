@@ -23,11 +23,9 @@ namespace Calculatrice
                 switch (calc)
                 {
                     case "+":
-                        {
                             /* Addition */
                             Console.WriteLine("Entrez le nombre 1 : ");
                             var readlineOutput = Console.ReadLine();
-
                             decimal? result = StringToDecimal(readlineOutput);
                             if (result is null)
                             {
@@ -37,7 +35,7 @@ namespace Calculatrice
 
                             Console.WriteLine("Entrez le nombre 2 : ");
                             var readlineOutput1 = Console.ReadLine();
-                            decimal? result1 = StringToDecimal(readlineOutput);
+                            decimal? result1 = StringToDecimal(readlineOutput1);
                             if (result is null)
                             {
                                 Console.WriteLine("Valeur invalide.");
@@ -48,9 +46,36 @@ namespace Calculatrice
                             Console.WriteLine("======================");
                             Console.WriteLine("votre résultat est : " + final);
                             Console.WriteLine("======================");
+                            Console.Write("Désirez vous continuer votre calcul ?\n");
                             Console.WriteLine();
+                            string calc1 = Console.ReadLine();
+
+                            switch (calc1)
+                            {
+                                case "Y":
+                                    Console.WriteLine("Entrez le nombre suivant à calculer : ");
+                                    var readlineOutputx = Console.ReadLine();
+                                    decimal? resultx = StringToDecimal(readlineOutputx);
+                                    if (resultx is null)
+                                    {
+                                        Console.WriteLine("Valeur invalide.");
+                                        break;
+                                    }
+                                    decimal finalx = final + resultx.Value;
+                                Console.WriteLine("======================");
+                                Console.WriteLine("votre résultat est : " + finalx);
+                                Console.WriteLine("======================");
+                                Console.WriteLine();
+                                break;
+                                case "N":
+                                    break;
+                                default:
+                                    Console.WriteLine("Le chiffre n'a pas été saisis.");
+                                    break;
+                            }
                             break;
-                        }
+                        
+
                     case "*":
                         /* Multiplication */
                         Console.WriteLine("Entrez le nombre 1 : ");
@@ -71,12 +96,38 @@ namespace Calculatrice
                             break;
                         }
 
-                        decimal final1 = result3.Value * result3.Value;
+                        decimal final1 = result2.Value * result3.Value;
                         Console.WriteLine();
                         Console.WriteLine("======================");
                         Console.WriteLine("votre résultat est : " + final1);
                         Console.WriteLine("======================");
+                        Console.Write("Désirez vous continuer votre calcul ?\n");
                         Console.WriteLine();
+                        string calc2 = Console.ReadLine();
+
+                        switch (calc2)
+                        {
+                            case "Y":
+                                Console.WriteLine("Entrez le nombre suivant à calculer : ");
+                                var readlineOutputy = Console.ReadLine();
+                                decimal? resulty = StringToDecimal(readlineOutputy);
+                                if (resulty is null)
+                                {
+                                    Console.WriteLine("Valeur invalide.");
+                                    break;
+                                }
+                                decimal finaly = final1 * resulty.Value;
+                                Console.WriteLine("======================");
+                                Console.WriteLine("votre résultat est : " + finaly);
+                                Console.WriteLine("======================");
+                                Console.WriteLine();
+                                break;
+                            case "N":
+                                break;
+                            default:
+                                Console.WriteLine("Le chiffre n'a pas été saisis.");
+                                break;
+                        }
                         break;
                     case "-":
                         /* Soustraction */
@@ -102,7 +153,34 @@ namespace Calculatrice
                         Console.WriteLine("======================");
                         Console.WriteLine("votre résultat est : " + final2);
                         Console.WriteLine("======================");
+                        Console.Write("Désirez vous continuer votre calcul ?\n");
                         Console.WriteLine();
+                        string calc4 = Console.ReadLine();
+
+                        switch (calc4)
+                        {
+                            case "Y":
+                                Console.WriteLine("Entrez le nombre suivant à calculer : ");
+                                var readlineOutputu = Console.ReadLine();
+                                decimal? resultu = StringToDecimal(readlineOutputu);
+                                if (resultu is null)
+                                {
+                                    Console.WriteLine("Valeur invalide.");
+                                    break;
+                                }
+                                decimal finalu = final2 - resultu.Value;
+                                Console.WriteLine("======================");
+                                Console.WriteLine("votre résultat est : " + finalu);
+                                Console.WriteLine("======================");
+                                Console.WriteLine();
+                                break;
+                            case "N":
+                                break;
+                            default:
+                                Console.WriteLine("Le chiffre n'a pas été saisis.");
+                                break;
+                        }
+
                         break;
                     case "/":
                         /* Division */
@@ -128,7 +206,33 @@ namespace Calculatrice
                         Console.WriteLine("======================");
                         Console.WriteLine("votre résultat est : " + final3);
                         Console.WriteLine("======================");
+                        Console.Write("Désirez vous continuer votre calcul ?\n");
                         Console.WriteLine();
+                        string calc3 = Console.ReadLine();
+
+                        switch (calc3)
+                        {
+                            case "Y":
+                                Console.WriteLine("Entrez le nombre suivant à calculer : ");
+                                var readlineOutputa = Console.ReadLine();
+                                decimal? resulta = StringToDecimal(readlineOutputa);
+                                if (resulta is null)
+                                {
+                                    Console.WriteLine("Valeur invalide.");
+                                    break;
+                                }
+                                decimal finala = final3 / resulta.Value;
+                                Console.WriteLine("======================");
+                                Console.WriteLine("votre résultat est : " + finala);
+                                Console.WriteLine("======================");
+                                Console.WriteLine();
+                                break;
+                            case "N":
+                                break;
+                            default:
+                                Console.WriteLine("Le chiffre n'a pas été saisis.");
+                                break;
+                        }
                         break;
                     case "C":
                         Console.Clear();
@@ -136,13 +240,11 @@ namespace Calculatrice
                     case "Q":
                         return;
                     default:
-                        Console.WriteLine("Vous n'avez choisi aucun calcul. La calculatrice c'est arrêtée.");
+                        Console.WriteLine("Vous n'avez choisi aucun calcul. Veuillez choisir une valeur correspondante. (*  /  -  +  C  Q)");
                         break;
                 }
             } while (true);
         }
-
-
         private static decimal? StringToDecimal(string inputString)
         {
             var numberFortmatSeparatedByComa = new CultureInfo("en-US").NumberFormat;
