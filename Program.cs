@@ -23,7 +23,7 @@ namespace Calculatrice
                 Console.Write("+ : Addition\n");
                 Console.Write("Q : Quitter l'application\n");
                 Console.Write("R : Reset le chiffre du calcul\n");
-                Console.Write("C : Clear la console\n\nVotre choix : ");
+                Console.Write("C : Clear la console\n\nVotre choix > ");
 
                 string calc = Console.ReadLine();
                 switch (calc)
@@ -36,6 +36,16 @@ namespace Calculatrice
                     case "-":
                         {
                             isSub = true;
+                            break;
+                        }
+                    case "*":
+                        {
+                            isMult = true;
+                            break;
+                        }
+                    case "/":
+                        {
+                            isDiv = true;
                             break;
                         }
                     case "C":
