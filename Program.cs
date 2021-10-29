@@ -15,8 +15,9 @@ namespace Calculatrice
             bool isDiv = false;
             bool isMult = false;
 
-            Console.WriteLine("Bonjour et bienvenue dans la calculatrice c# faite par Yann.");
+            Console.WriteLine("Bonjour et bienvenue dans la calculatrice.");
             Console.WriteLine("Pour utiliser a bon escient la calculatrice, suivez les commandes ci-dessous.");
+            Console.WriteLine("Made by SeenKid");
             Console.WriteLine();
 
             do
@@ -58,7 +59,8 @@ namespace Calculatrice
                     case "Q":
                         return;
                     case "R":
-                         resultatTotal = null;
+                        resultatTotal = null;
+                        Console.Clear();
                         continue;
                     default:
                         Console.WriteLine("Vous n'avez choisi aucun calcul. Veuillez choisir une valeur correspondante. (*  /  -  +  C  Q)");
