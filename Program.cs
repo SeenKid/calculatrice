@@ -15,6 +15,10 @@ namespace Calculatrice
             bool isDiv = false;
             bool isMult = false;
 
+            Console.WriteLine("Bonjour et bienvenue dans la calculatrice c# faite par Yann.");
+            Console.WriteLine("Pour utiliser a bon escient la calculatrice, suivez les commandes ci-dessous.");
+            Console.WriteLine();
+
             do
             {
                 Console.Write("* : Multiplication\n");
