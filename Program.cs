@@ -114,6 +114,7 @@ namespace Calculatrice
             } while (true);
         }
 
+        //Made by SeenKid
         private static decimal? StringToDecimal(string inputString)
         {
             var numberFortmatSeparatedByComa = new CultureInfo("en-US").NumberFormat;
